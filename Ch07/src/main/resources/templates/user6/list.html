@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>User6</title>
+	</head>
+	<body>
+		<thead>
+        <tr>
+            <th>uid</th>
+            <th>name</th>
+            <th>birth</th>
+            <th>gender</th>
+            <th>addr</th>
+            <th>hp</th>
+  
+        </tr>
+		</thead>
+		<thead>
+		         <tr th:each="user : ${userList}">
+		            <td><span th:text="${user.uid}"></span></td>
+		            <td><span th:text="${user.name}"></span></td>
+		            <td><span th:text="${user.birth}"></span></td>
+		            <td><span th:text="${user.gender}"></span></td>
+		            <td><span th:text="${user.addr}"></span></td>
+		            <td><span th:text="${user.hp}"></span></td>
+		        </tr>
+		</thead>
+	</body>
+</html>
+
