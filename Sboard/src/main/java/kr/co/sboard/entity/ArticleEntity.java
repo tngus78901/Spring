@@ -1,11 +1,13 @@
 package kr.co.sboard.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import kr.co.sboard.dto.ArticleDTO;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
 
 import java.time.LocalDateTime;
+
 
 @Getter
 @Setter
@@ -17,6 +19,8 @@ import java.time.LocalDateTime;
 @Table(name = "Article")
 public class ArticleEntity {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int no;
     private int parent;
     private int comment;
@@ -27,9 +31,11 @@ public class ArticleEntity {
     private int hit;
     private String writer;
     private String regip;
+
+    @CreationTimestamp
     private LocalDateTime rdate;
 
-    public ArticleDTO toDTO() {
+    public ArticleDTO toDTO(){
         return ArticleDTO.builder()
                 .no(no)
                 .parent(parent)
@@ -37,7 +43,6 @@ public class ArticleEntity {
                 .cate(cate)
                 .title(title)
                 .content(content)
-                .file(file)
                 .hit(hit)
                 .writer(writer)
                 .regip(regip)

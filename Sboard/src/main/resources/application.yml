@@ -10,7 +10,7 @@ logging:
         org:
             hibernate: info
             springframework:
-                security: info
+                security: debug
         root: info
 server:
     servlet:
@@ -24,12 +24,13 @@ spring:
     devtools:
         livereload:
             enabled: true
-        restart:
-            enabled: true
+        remote:
+            restart:
+                enabled: true
     jpa:
         database: mysql
         hibernate:
-            ddl-auto: update
+            ddl-auto: none
             naming:
                 physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
         properties:
@@ -43,4 +44,12 @@ spring:
             password: 1234
     thymeleaf:
         cache: false
+        # prefix 설정을 안하면 HTML 수정 후 브라우저에서 새로고침 반영안됨
         prefix: file:src/main/resources/templates/
+
+    servlet:
+        multipart:
+            location: src/main/resources/static/file/
+            max-file-size: 10MB
+
+

@@ -18,4 +18,7 @@ public class TermsEntity {
     private int no;
     private String terms;
     private String privacy;
+
+
+
 }
