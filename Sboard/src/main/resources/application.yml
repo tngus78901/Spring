@@ -19,7 +19,7 @@ spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: Relaxism^*^BBU5980
-        url: jdbc:mysql://13.125.207.167:3306/userdb
+        url: jdbc:mysql://13.125.207.167:3306/Jboard
         username: root
     devtools:
         livereload:
